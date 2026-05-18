@@ -110,7 +110,6 @@
             "group": "Network Information",
             "pages": [
               "base-chain/network-information/base-contracts",
-              "base-chain/network-information/ecosystem-contracts",
               "base-chain/network-information/network-fees",
               "base-chain/network-information/block-building",
               "base-chain/network-information/transaction-finality",
@@ -268,87 +267,78 @@
                     ]
                   },
                   {
-                    "group": "Jovian",
+                    "group": "Optimism",
                     "pages": [
-                      "base-chain/specs/upgrades/jovian/overview",
-                      "base-chain/specs/upgrades/jovian/exec-engine",
-                      "base-chain/specs/upgrades/jovian/derivation",
-                      "base-chain/specs/upgrades/jovian/l1-attributes",
-                      "base-chain/specs/upgrades/jovian/system-config"
-                    ]
-                  },
-                  {
-                    "group": "Isthmus",
-                    "pages": [
-                      "base-chain/specs/upgrades/isthmus/overview",
-                      "base-chain/specs/upgrades/isthmus/exec-engine",
-                      "base-chain/specs/upgrades/isthmus/derivation",
-                      "base-chain/specs/upgrades/isthmus/l1-attributes",
-                      "base-chain/specs/upgrades/isthmus/predeploys",
-                      "base-chain/specs/upgrades/isthmus/system-config"
-                    ]
-                  },
-                  {
-                    "group": "Holocene",
-                    "pages": [
-                      "base-chain/specs/upgrades/holocene/overview",
-                      "base-chain/specs/upgrades/holocene/exec-engine",
-                      "base-chain/specs/upgrades/holocene/derivation",
-                      "base-chain/specs/upgrades/holocene/system-config"
-                    ]
-                  },
-                  {
-                    "group": "Granite",
-                    "pages": [
-                      "base-chain/specs/upgrades/granite/overview",
-                      "base-chain/specs/upgrades/granite/exec-engine",
-                      "base-chain/specs/upgrades/granite/derivation"
-                    ]
-                  },
-                  {
-                    "group": "Fjord",
-                    "pages": [
-                      "base-chain/specs/upgrades/fjord/overview",
-                      "base-chain/specs/upgrades/fjord/exec-engine",
-                      "base-chain/specs/upgrades/fjord/derivation",
-                      "base-chain/specs/upgrades/fjord/predeploys"
-                    ]
-                  },
-                  {
-                    "group": "Ecotone",
-                    "pages": [
-                      "base-chain/specs/upgrades/ecotone/overview",
-                      "base-chain/specs/upgrades/ecotone/derivation",
-                      "base-chain/specs/upgrades/ecotone/l1-attributes"
-                    ]
-                  },
-                  {
-                    "group": "Delta",
-                    "pages": [
-                      "base-chain/specs/upgrades/delta/overview",
-                      "base-chain/specs/upgrades/delta/span-batches"
-                    ]
-                  },
-                  {
-                    "group": "Canyon",
-                    "pages": [
-                      "base-chain/specs/upgrades/canyon/overview"
-                    ]
-                  },
-                  {
-                    "group": "Pectra Blob Schedule",
-                    "pages": [
-                      "base-chain/specs/upgrades/pectra-blob-schedule/overview",
-                      "base-chain/specs/upgrades/pectra-blob-schedule/derivation"
+                      {
+                        "group": "Jovian",
+                        "pages": [
+                          "base-chain/specs/upgrades/jovian/overview",
+                          "base-chain/specs/upgrades/jovian/exec-engine",
+                          "base-chain/specs/upgrades/jovian/derivation",
+                          "base-chain/specs/upgrades/jovian/l1-attributes",
+                          "base-chain/specs/upgrades/jovian/system-config"
+                        ]
+                      },
+                      {
+                        "group": "Isthmus",
+                        "pages": [
+                          "base-chain/specs/upgrades/isthmus/overview",
+                          "base-chain/specs/upgrades/isthmus/exec-engine",
+                          "base-chain/specs/upgrades/isthmus/derivation",
+                          "base-chain/specs/upgrades/isthmus/l1-attributes",
+                          "base-chain/specs/upgrades/isthmus/predeploys",
+                          "base-chain/specs/upgrades/isthmus/system-config"
+                        ]
+                      },
+                      {
+                        "group": "Holocene",
+                        "pages": [
+                          "base-chain/specs/upgrades/holocene/overview",
+                          "base-chain/specs/upgrades/holocene/exec-engine",
+                          "base-chain/specs/upgrades/holocene/derivation",
+                          "base-chain/specs/upgrades/holocene/system-config"
+                        ]
+                      },
+                      {
+                        "group": "Granite",
+                        "pages": [
+                          "base-chain/specs/upgrades/granite/overview",
+                          "base-chain/specs/upgrades/granite/exec-engine",
+                          "base-chain/specs/upgrades/granite/derivation"
+                        ]
+                      },
+                      {
+                        "group": "Fjord",
+                        "pages": [
+                          "base-chain/specs/upgrades/fjord/overview",
+                          "base-chain/specs/upgrades/fjord/exec-engine",
+                          "base-chain/specs/upgrades/fjord/derivation",
+                          "base-chain/specs/upgrades/fjord/predeploys"
+                        ]
+                      },
+                      {
+                        "group": "Ecotone",
+                        "pages": [
+                          "base-chain/specs/upgrades/ecotone/overview",
+                          "base-chain/specs/upgrades/ecotone/derivation",
+                          "base-chain/specs/upgrades/ecotone/l1-attributes"
+                        ]
+                      },
+                      {
+                        "group": "Delta",
+                        "pages": [
+                          "base-chain/specs/upgrades/delta/overview",
+                          "base-chain/specs/upgrades/delta/span-batches"
+                        ]
+                      },
+                      {
+                        "group": "Canyon",
+                        "pages": [
+                          "base-chain/specs/upgrades/canyon/overview"
+                        ]
+                      }
                     ]
                   }
-                ]
-              },
-              {
-                "group": "Reference",
-                "pages": [
-                  "base-chain/specs/reference/glossary",
-                  "base-chain/specs/reference/configurability"
                 ]
               },
               {
@@ -356,6 +346,13 @@
                 "pages": [
                   "base-chain/specs/bcps/index",
                   "base-chain/specs/bcps/bcp-0000"
+                ]
+              },
+              {
+                "group": "Reference",
+                "pages": [
+                  "base-chain/specs/reference/glossary",
+                  "base-chain/specs/reference/configurability"
                 ]
               }
             ]
@@ -2023,10 +2020,6 @@
     {
       "source": "/chain/connecting-to-base",
       "destination": "/base-chain/quickstart/connecting-to-base"
-    },
-    {
-      "source": "/chain/contracts",
-      "destination": "/base-chain/network-information/ecosystem-contracts"
     },
     {
       "source": "/chain/cross-chain",
