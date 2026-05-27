@@ -182,10 +182,13 @@ Use Base MCP's chain names (`base`, `base-sepolia`, `ethereum`, `optimism`, `pol
 
 | Pattern | When to use | Example |
 |---------|-------------|---------|
-| Single-call envelope | One action, one tx | [Avantis](https://github.com/base/skills/blob/main/skills/base-mcp/plugins/avantis.md) |
-| Ordered batch | Approval + action must be atomic | [Moonwell](https://github.com/base/skills/blob/main/skills/base-mcp/plugins/moonwell.md) |
-| CLI or MCP prepared batch | Prefer a protocol CLI when shell access exists; fall back to an MCP server on chat-only surfaces | [Morpho](https://github.com/base/skills/blob/main/skills/base-mcp/plugins/morpho.md) |
-| Multi-endpoint flow | Quote, approve, swap as separate calls | [Uniswap](https://github.com/base/skills/blob/main/skills/base-mcp/plugins/uniswap.md) |
+| Single-call envelope | One action, one tx | [Avantis](https://github.com/base/skills/blob/master/skills/base-mcp/plugins/avantis.md) |
+| Ordered batch | Approval + action must be atomic | [Moonwell](https://github.com/base/skills/blob/master/skills/base-mcp/plugins/moonwell.md) |
+| CLI-only prepared batch | Protocol CLI produces calldata; no MCP fallback needed | [Aerodrome](https://github.com/base/skills/blob/master/skills/base-mcp/plugins/aerodrome.md) |
+| CLI or MCP prepared batch | Prefer a protocol CLI when shell access exists; fall back to an MCP server on chat-only surfaces | [Morpho](https://github.com/base/skills/blob/master/skills/base-mcp/plugins/morpho.md) |
+| Multi-endpoint flow | Quote, approve, swap as separate calls | [Uniswap](https://github.com/base/skills/blob/master/skills/base-mcp/plugins/uniswap.md) |
+| Discovery API + swap | Read-only feed selects the token; `swap` executes the purchase | [Bankr](https://github.com/base/skills/blob/master/skills/base-mcp/plugins/bankr.md) |
+| MCP server + SIWE session auth | Protocol has its own MCP server; Base MCP wallet signs the login challenge | [Virtuals](https://github.com/base/skills/blob/master/skills/base-mcp/plugins/virtuals.md) |
 ## Related
 
 <CardGroup cols={2}>
