@@ -98,6 +98,13 @@
         "tab": "Chain",
         "groups": [
           {
+            "group": "Beryl Upgrade",
+            "tag": "New",
+            "pages": [
+              "base-chain/specs/upgrades/beryl/overview"
+            ]
+          },
+          {
             "group": "Quickstart",
             "pages": [
               "base-chain/quickstart/why-base",
@@ -248,6 +255,14 @@
               {
                 "group": "Upgrades",
                 "pages": [
+                  {
+                    "group": "Beryl",
+                    "pages": [
+                      "base-chain/specs/upgrades/beryl/overview",
+                      "base-chain/specs/upgrades/beryl/b20",
+                      "base-chain/specs/upgrades/beryl/reth-v2"
+                    ]
+                  },
                   {
                     "group": "Azul",
                     "pages": [
