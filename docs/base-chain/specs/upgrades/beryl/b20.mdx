@@ -237,19 +237,3 @@ The fixed-decimals, fiat-backed carveout. Decimals are hard-wired to `6` and are
 
 Adds `currency()`, which returns an ISO-style currency code string (e.g. `"USD"`, `"EUR"`). The code is set once at creation via `B20StablecoinCreateParams.currency`, restricted to characters `A`-`Z` only. It is self-declared and not verified against any external registry.
 
-## Roadmap
-
-Because B20 tokens execute in Rust outside the EVM, the node has advanced control over their behavior. The following capabilities are planned for future upgrades:
-
-### Frontier Features
-
-- **Pay transaction fees with B20** - enables transacting using only a custom asset, with no ETH required.
-- **Virtual addresses** - create unique deposit addresses that forward to a shared account.
-- **Indexed data** - Base Node RPCs serve aggregated balances, transfer history, and token metadata directly, with no external indexer required.
-
-### Performance Optimizations
-
-- **Lower fees** - approximately 50% cheaper transfers compared to ERC-20 contracts.
-- **Higher throughput** - approximately 2× the transfers per block compared to ERC-20 contracts.
-
-Further optimizations are planned for trading and payments use cases specifically.
