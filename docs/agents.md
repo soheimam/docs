@@ -8,11 +8,13 @@ description: Look up Base documentation with a compact directory-grouped index b
 
 > High-signal index of section guides. Jump to a section's llms.txt for concise intros, curated links, and fast navigation.
 
-- [AI Agents](./ai-agents/llms.txt) — Give your AI assistant a wallet. Base MCP connects any AI to your Base Account — check balances, send funds, swap tokens, sign messages, and pay x402 APIs.
+- [AI Agents](./ai-agents/llms.txt) — Give your AI assistant a wallet. Base MCP connects any AI to your Base Account. Check balances, send funds, swap tokens, sign messages, and pay with x402.
 - [Apps](./apps/llms.txt) — A step-by-step guide to building a Next.js tally app on Base using wagmi and viem, with wallet connection, contract reads and writes, and batch transaction support.
 - [Base Account](./base-account/llms.txt)
 - [Base Chain](./base-chain/llms.txt) — Bridge tokens and messages between Base and Solana Mainnet
 - [Get Started](./get-started/llms.txt)
+- [Ledger](./ledger/llms.txt)
+- [Static](./static/llms.txt)
 
 ## Tools available for AI assistants
 
@@ -78,7 +80,7 @@ npx skills add base/base-skills
 |base-chain/api-reference/flashblocks-api:base_transactionStatus,eth_simulateV1,flashblocks-api-overview,newFlashblockTransactions,newFlashblocks,pendingLogs
 |base-chain/flashblocks:app-integration,architecture,faq,overview
 |base-chain/network-information:base-contracts,block-building,bridges,configuration-changelog,diffs-ethereum-base,network-faucets,network-fees,transaction-finality,troubleshooting-transactions
-|base-chain/node-operators:base-v1-upgrade,node-providers,performance-tuning,run-a-base-node,snapshots,troubleshooting
+|base-chain/node-operators:node-providers,performance-tuning,run-a-base-node,snapshots,troubleshooting
 |base-chain/quickstart:base-solana-bridge,connecting-to-base,deploy-on-base,why-base
 |base-chain/security:avoid-malicious-flags,bug-bounty,report-vulnerability,security-council
 |base-chain/specs:overview
@@ -89,7 +91,8 @@ npx skills add base/base-skills
 |base-chain/specs/protocol/execution/evm:precompiles,predeploys,preinstalls
 |base-chain/specs/protocol/proofs:challenger,contracts,index,proposer,registrar,tee-prover,zk-prover
 |base-chain/specs/reference:configurability,glossary
-|base-chain/specs/upgrades/azul:exec-engine,overview,proofs
+|base-chain/specs/upgrades/azul:exec-engine,node-upgrade,overview,proofs
+|base-chain/specs/upgrades/beryl:b20,overview
 |base-chain/specs/upgrades/canyon:overview
 |base-chain/specs/upgrades/delta:overview,span-batches
 |base-chain/specs/upgrades/ecotone:derivation,l1-attributes,overview
@@ -99,4 +102,5 @@ npx skills add base/base-skills
 |base-chain/specs/upgrades/isthmus:derivation,exec-engine,l1-attributes,overview,predeploys,system-config
 |base-chain/specs/upgrades/jovian:derivation,exec-engine,l1-attributes,overview,system-config
 |get-started:base-mentorship-program,base-services-hub,base,block-explorers,concepts,country-leads-and-ambassadors,data-indexers,deploy-smart-contracts,docs-llms,docs-mcp,get-funded,launch-token,learning-resources,prompt-library,resources-for-ai-agents
+|ledger:deposit-flow,how-it-works,overview,withdraw-flow
 |root:agents,changes,cookie-policy,privacy-policy,terms-of-service,tone_of_voice
