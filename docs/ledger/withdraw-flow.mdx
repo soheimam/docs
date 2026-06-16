@@ -1,6 +1,7 @@
 ---
 title: "Withdraw flow"
 keywords: ["Base Ledger withdrawal", "Portal contract withdraw", "private withdrawal Base", "withdrawal authorization onchain", "operator-signed withdrawal"]
+description: "How withdrawals move funds from a Base Ledger back to Base through the Portal contract, with operator-signed authorization and validation you choose, while keeping the sender account private."
 ---
 
 Funds leave a Base Ledger through the Portal contract on Base. The ledger keeps recipients and balances private.
@@ -26,6 +27,4 @@ A withdrawal can also require an attestation or permission, for example to gate 
 
 `withdraw()` is an ordinary Base contract call. An integration can batch it with other Base actions in one atomic transaction. The actions share one transaction, so they settle together or not at all. Funds never sit in an intermediate state.
 
-<Card title="Deposit flow" icon="arrow-left" href="/ledger/deposit-flow">
-See how funds move from Base into a ledger.
-</Card>
+
