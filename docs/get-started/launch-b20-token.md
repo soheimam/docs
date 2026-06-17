@@ -1,18 +1,20 @@
 ---
 title: "Launch a B20 Token"
-description: "Spin up a fully configured ERC-20 superset token on Base through the singleton B20 Factory precompile. Set the admin, minter, and supply cap, mint your initial supply, and confirm it on-chain, all without writing or deploying any Solidity."
+description: "Launch a B20 token on Base by calling the B20 Factory precompile — no Solidity to write or deploy."
 ---
 
-B20 is an ERC-20 superset that runs as a native precompile on Base. You don't write or deploy a token contract. Instead, you ask the singleton **B20 Factory** to create one, fully configured, in a single transaction.
+B20 is an ERC-20 superset that runs as a native precompile on Base. Roles, supply caps, pausing, policy gating, memos, and `permit` are built into the chain, at full ERC-20 selector parity.
 
-By the end you have a live B20 Asset token (with an admin, a minter, and a supply cap) holding minted supply you can view in the explorer. To accept it as payment in an app, continue with [Accept B20 payments](/apps/guides/accept-b20-payments).
+A standard ERC-20 leaves that logic for you to build, audit, and maintain. With B20, you call the singleton **B20 Factory** to create a token, fully configured, in a single transaction.
+
+This guide creates an Asset token, mints its initial supply, and verifies the balance on-chain. To accept the token as payment in an app, continue with [Accept B20 payments](/apps/guides/accept-b20-payments).
 
 ## Before you begin
 
 You need:
 
 * [Foundry](https://getfoundry.sh) installed. You'll use `cast` from it.
-* **Base's `forge` build** for deploying. A B20 token is a native precompile, so the factory address holds no contract bytecode. Stock `forge` can't simulate a call to it and aborts a deploy script with `call to non-contract address`. Base's [`base-anvil`](https://github.com/base/base-anvil) fork of `forge` registers the precompiles into its EVM. Build it once and put it ahead of stock `forge` on your `PATH`:
+* **Base's `forge` build** for deploying. A B20 token is a native precompile, so the factory address holds no contract bytecode. Standard `forge` cannot simulate a call to that address. It aborts the deploy script with `call to non-contract address`. Base's [`base-anvil`](https://github.com/base/base-anvil) fork of `forge` registers the precompiles into its EVM. Build it once and put it ahead of standard `forge` on your `PATH`:
 
   ```bash theme={null}
   git clone https://github.com/base/base-anvil && cd base-anvil
@@ -135,7 +137,7 @@ The factory's single entry point is `createB20(variant, salt, params, initCalls)
   forge script script/CreateToken.s.sol --rpc-url $RPC_URL --private-key $PRIVATE_KEY --broadcast
   ```
 
-  On success the script logs the new token's address. Note the `0xB200...` prefix: the factory itself is `0xB20f...`, and the tokens it creates start `0xB200...`:
+  On success the script logs the new token's address. The factory's address starts `0xB20f...`. The tokens it creates start `0xB200...`:
 
   ```text theme={null}
   == Logs ==
@@ -144,7 +146,7 @@ The factory's single entry point is `createB20(variant, salt, params, initCalls)
 </Step>
 
 <Step title="Capture the token address">
-  Save it into your environment so the next step needs no copy-paste. The broadcast artifact holds the return value:
+  Save the address to an environment variable so the next step needs no copy-paste. The broadcast artifact holds the return value:
 
   ```bash theme={null}
   export TOKEN_ADDRESS=$(jq -r '.returns.token.value' \
@@ -193,15 +195,6 @@ You did all of this without writing, deploying, or auditing a token contract.
 
 ## Next steps
 
-<Card title="Accept B20 payments in an app" icon="credit-card" href="/apps/guides/accept-b20-payments">
-Wire this token into a checkout flow that tags each payment with an order ID and reconciles it from on-chain events.
-</Card>
-
-* Gate transfers or mints with PolicyRegistry policies, add granular pause, or manage roles. See the B20 overview.
+* [Accept B20 payments in an app](/apps/guides/accept-b20-payments): wire this token into a checkout flow that tags each payment with an order ID and reconciles it from on-chain events.
+* Gate transfers or mints with PolicyRegistry policies, add granular pause, or manage roles. See the [B20 token standard](/base-chain/specs/upgrades/beryl/b20).
 * Issue a stablecoin variant (fixed 6 decimals, immutable currency code).
-
-<AccordionGroup>
-<Accordion title="Why B20 instead of a standard ERC-20?">
-With a standard ERC-20 you write (or fork) a token contract, audit it, deploy it, and add access control, pausing, and compliance hooks yourself. With B20, that logic is part of the chain. Every token the factory creates runs the same native implementation, with roles, supply cap, pause, policy gating, memos, and `permit` built in at full ERC-20 selector parity. Tooling that targets the ERC-20 interface works with it unchanged.
-</Accordion>
-</AccordionGroup>
