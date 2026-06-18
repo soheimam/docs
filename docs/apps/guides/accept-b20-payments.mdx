@@ -47,7 +47,7 @@ To collect with an allowance instead of a direct transfer, use `transferFromWith
 
 ## Handle B20-specific reverts
 
-A B20 transfer can revert where a plain ERC-20 would not. Surface these so a failed payment is visible, not silent:
+A B20 transfer can revert where a standard ERC-20 would not. Surface these so a failed payment is visible, not silent:
 
 - `PolicyForbids`: the sender or recipient is not authorized by the token's transfer policy. Most tokens are open by default, but a regulated issuer can gate transfers with an allowlist or blocklist.
 - A paused transfer: the issuer paused the token's `TRANSFER` feature.
