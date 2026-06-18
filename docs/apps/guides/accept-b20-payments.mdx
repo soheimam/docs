@@ -1,17 +1,17 @@
 ---
-title: "Accept B20 payments in an app"
-description: "Take B20 token payments in your app and match each one to an order with on-chain memos."
+title: "Accept B20 payments"
+description: "Accept B20 token payments in your app and match each transaction to an order with onchain memos."
 ---
 
 B20 is an ERC-20 superset. Standard `transfer`, `transferFrom`, `approve`, `balanceOf`, and ERC-2612 `permit` all work, so an app that accepts ERC-20 tokens accepts B20 with no code changes.
 
-B20's additions include transfer policies, pausing, supply caps, and memos. This guide uses the memo: `transferWithMemo` works like `transfer`, but also attaches a `bytes32` reference such as an order ID and emits a `Memo` event right after the standard `Transfer`. Read that event to tie each payment to an order.
+B20's new features include transfer policies, pausing, supply caps, and memos. This guide uses the memo: `transferWithMemo` works like `transfer`, but also attaches a `bytes32` reference such as an order ID and emits a `Memo` event right after the standard `Transfer`. Read that event to tie each payment to an order.
 
 ## Tag a payment with a memo
 
 This uses your configured viem `walletClient` and `publicClient`. It reads the token's decimals, sends a payment tagged with an order ID, then reads the memo back from the receipt:
 
-```js theme={null}
+```js 
 import { parseUnits, stringToHex, hexToString, parseEventLogs } from 'viem';
 
 const TOKEN    = '0xB20f...'; // the B20 token you accept
